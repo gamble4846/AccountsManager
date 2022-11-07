@@ -1,0 +1,43 @@
+<router-outlet></router-outlet>
+
+<h2>Databases</h2>
+
+<table class="basicTable">
+  <thead>
+    <tr>
+      <th>DatabaseMainID</th>
+      <th>DatabaseNickName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of Databases" (click)="DatabaseSelected(data)">
+      <td>{{data.DatabaseMainID}}</td>
+      <td>{{data.DatabaseNickName}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Accounts List</h2>
+
+<table class="basicTable">
+  <thead>
+    <tr>
+      <th>AccountID</th>
+      <th>AccountNickName</th>
+      <th>AccountTypeID</th>
+      <th>LogoLink</th>
+      <th>WebsiteAPP</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of AccountsList" (click)="DatabaseSelected(data)">
+      <td>{{data.AccountID}}</td>
+      <td>{{data.AccountNickName}}</td>
+      <td>{{data.AccountTypeID}}</td>
+      <td>{{data.LogoLink}}</td>
+      <td>{{data.WebsiteAPP}}</td>
+      <td>{{getTagsString(data.TagData)}}</td>
+    </tr>
+  </tbody>
+</table>
