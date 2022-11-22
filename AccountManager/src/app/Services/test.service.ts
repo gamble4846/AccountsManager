@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TestService {
-  apiLink:string = "https://script.google.com/macros/s/AKfycbw3dI3g3HdU-EDDLJaEr6PkSFrDy2F3yN3OaV0zreNSSa3u9SkLZJQ8RGRqKP4KoWkr/exec";
+  apiLink:string = "https://script.google.com/macros/s/AKfycbyOI0tCQTQ-RKRKMetzRK0FW5DiY0tzvXG3tq8yxnUIsaD4OU3vXugPiwCAX5_D8rY/exec";
   constructor(private http: HttpClient) { }
 
   getOptions(){
@@ -28,7 +28,17 @@ export class TestService {
       "method": "GET",
       "Action": "ACCOUNTSLIST",
       "DatabaseMainID": DatabaseMainID
+    }
+    return this.http.post(this.apiLink, body, this.getOptions());
   }
+
+  getAttributesData(DatabaseMainID:any, AccountId:any){
+    var body = {
+      "method": "GET",
+      "Action": "ATTRIBUTESDATA",
+      "DatabaseMainID": DatabaseMainID,
+      "AccountId": AccountId
+    }
     return this.http.post(this.apiLink, body, this.getOptions());
   }
 }

@@ -31,13 +31,36 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of AccountsList" (click)="DatabaseSelected(data)">
+    <tr *ngFor="let data of AccountsList" (click)="AccountSelected(data)">
       <td>{{data.AccountID}}</td>
       <td>{{data.AccountNickName}}</td>
       <td>{{data.AccountTypeID}}</td>
       <td>{{data.LogoLink}}</td>
       <td>{{data.WebsiteAPP}}</td>
       <td>{{getTagsString(data.TagData)}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Attributes Data</h2>
+
+<table class="basicTable">
+  <thead>
+    <tr>
+      <th>Account ID</th>
+      <th>Attribute ID</th>
+      <th>Attribute Name</th>
+      <th>Attribute Value</th>
+      <th>Attribute Desc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of AttributesDatas">
+      <td>{{data.AccountID}}</td>
+      <td>{{data.AttributeID}}</td>
+      <td>{{data.AttributeName}}</td>
+      <td>{{data.Value}}</td>
+      <td>{{data.AttributeDesc}}</td>
     </tr>
   </tbody>
 </table>
