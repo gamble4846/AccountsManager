@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TestService {
-  apiLink:string = "https://script.google.com/macros/s/AKfycbyOI0tCQTQ-RKRKMetzRK0FW5DiY0tzvXG3tq8yxnUIsaD4OU3vXugPiwCAX5_D8rY/exec";
+  apiLink:string = localStorage.getItem("SCRIPTURL") || "";
   constructor(private http: HttpClient) { }
 
   getOptions(){
